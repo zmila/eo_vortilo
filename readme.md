@@ -12,10 +12,16 @@ install PyQt6 using:
 download: 8mb, 74mb
 
 
-run the app:
+## run the app:
 > ```bash
 > $ python3 app.py
 > ```
+
+## run tests:
+
+pytest tests/
+# or
+pytest tests/test_du_litera_silab_ilo.py -v
 
 
 # todo
