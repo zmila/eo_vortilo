@@ -1,7 +1,11 @@
 from typing import NamedTuple
 
 NUL_KO = "x"
+NUL_KO_KOM = "<x"
+NUL_KO_FIN = "x>"
 NUL_VO = "y"
+NUL_VO_KOM = "<y"
+NUL_VO_FIN = "y>"
 SKIP_CHARS = {"'", "_", "-"}
 
 
@@ -22,8 +26,10 @@ class DuLiteraSilabiIlo:
         """Divide a word into two-letter syllables in AVK (antaŭ-vokala konsonanto) mode.
 
         Each syllable is KV (consonant-vowel):
-        - If a vowel has no consonant before it, add NUL_KO (x)
-        - If a consonant has no vowel after it, add NUL_VO (y)
+        - If a first vowel in word has no consonant before it, add NUL_KO_KOM (<x)
+        - If a vowel inside word has no consonant before it, add NUL_KO (x)
+        - If a last consonant in the word has no vowel after it, add NUL_VO_FIN (y>)
+        - If a consonant inside word has no vowel after it, add NUL_VO (y)
         - Skip characters: ', _, - (visual dividers, not part of syllables)
         """
         if not vorto:
@@ -31,7 +37,10 @@ class DuLiteraSilabiIlo:
 
         vorto_lc = vorto.lower()
         vorto_lc = "".join(c for c in vorto_lc if c not in SKIP_CHARS)
-        
+
+        if not vorto_lc:
+            return []
+
         vokaloj = {"a", "e", "i", "o", "u"}
         silaboj = []
 
@@ -40,8 +49,12 @@ class DuLiteraSilabiIlo:
             char = vorto_lc[i]
 
             if char in vokaloj:
-                # Vowel without consonant - add NUL_KO
-                silaboj.append(Silabo(k=NUL_KO, v=char))
+                # Vowel without consonant - add NUL_KO_KOM if first, else NUL_KO
+                if len(silaboj) == 0:
+                    k = NUL_KO_KOM
+                else:
+                    k = NUL_KO
+                silaboj.append(Silabo(k=k, v=char))
                 i += 1
             else:
                 # Consonant - find or create a vowel
@@ -53,8 +66,11 @@ class DuLiteraSilabiIlo:
                     v = vorto_lc[i]
                     i += 1
                 else:
-                    # No vowel follows - use NUL_VO
-                    v = NUL_VO
+                    # No vowel follows - check if this is the last consonant
+                    if i >= len(vorto_lc):
+                        v = NUL_VO_FIN
+                    else:
+                        v = NUL_VO
 
                 silaboj.append(Silabo(k=k, v=v))
 
@@ -64,8 +80,10 @@ class DuLiteraSilabiIlo:
         """Divide a word into two-letter syllables in PVK (post-vowel consonant) mode.
 
         Each syllable is VC (vowel-consonant), but stored as Silabo with:
-        - k = consonant (or NUL_KO if no consonant)
-        - v = vowel (or NUL_VO if no vowel)
+        - If a last vowel in word has no consonant after it, add NUL_KO_FIN (x>)
+        - If a vowel inside word has no consonant after it, add NUL_KO (x)
+        - If a first consonant in the word has no vowel before it, add NUL_VO_KOM (<y)
+        - If a consonant inside word has no vowel before it, add NUL_VO (y)
         - Skip characters: ', _, - (visual dividers, not part of syllables)
         """
         if not vorto:
@@ -73,7 +91,10 @@ class DuLiteraSilabiIlo:
 
         vorto_lc = vorto.lower()
         vorto_lc = "".join(c for c in vorto_lc if c not in SKIP_CHARS)
-        
+
+        if not vorto_lc:
+            return []
+
         vokaloj = {"a", "e", "i", "o", "u"}
         silaboj = []
 
@@ -91,15 +112,29 @@ class DuLiteraSilabiIlo:
                     k = vorto_lc[i]
                     i += 1
                 else:
-                    # No consonant follows - use NUL_KO
-                    k = NUL_KO
+                    # No consonant follows - check if this is the last vowel
+                    # Check if there are any more vowels after current position
+                    has_vowel_after = any(
+                        vorto_lc[j] in vokaloj for j in range(i, len(vorto_lc))
+                    )
+                    if not has_vowel_after:
+                        k = NUL_KO_FIN
+                    else:
+                        k = NUL_KO
 
                 silaboj.append(Silabo(k=k, v=v))
             else:
-                # Consonant without vowel - use NUL_VO
+                # Consonant without vowel before it
                 k = char
-                v = NUL_VO
                 i += 1
+
+                # Determine which NUL_VO to use
+                if len(silaboj) == 0:
+                    # First consonant in word
+                    v = NUL_VO_KOM
+                else:
+                    # Consonant inside word
+                    v = NUL_VO
 
                 silaboj.append(Silabo(k=k, v=v))
 
@@ -108,29 +143,45 @@ class DuLiteraSilabiIlo:
     def skribu_silabon_avk(self, silabo: Silabo) -> str:
         """Convert a single syllable to KV string (AVK mode).
 
-        Silabo always has k=consonant (or NUL_KO), v=vowel (or NUL_VO).
+        Silabo always has k=consonant (or NUL_KO*), v=vowel (or NUL_VO*).
         Rules:
-        - NUL_KO (x) and NUL_VO (y) remain lowercase
+        - Special markers (NUL_KO, NUL_KO_KOM, NUL_KO_FIN, NUL_VO, NUL_VO_FIN) remain as-is
         - All other consonants and vowels are uppercase
 
-        Example: Silabo(k='x', v='a') → 'xA' (KV order)
+        Example: Silabo(k='<x', v='a') → '<xA' (KV order with special marker)
         """
-        k_str = silabo.k if silabo.k in (NUL_KO, NUL_VO) else silabo.k.upper()
-        v_str = silabo.v if silabo.v in (NUL_KO, NUL_VO) else silabo.v.upper()
+        special_markers = {
+            NUL_KO,
+            NUL_KO_KOM,
+            NUL_KO_FIN,
+            NUL_VO,
+            NUL_VO_KOM,
+            NUL_VO_FIN,
+        }
+        k_str = silabo.k if silabo.k in special_markers else silabo.k.upper()
+        v_str = silabo.v if silabo.v in special_markers else silabo.v.upper()
         return k_str + v_str
 
     def skribu_silabon_pvk(self, silabo: Silabo) -> str:
         """Convert a single syllable to VC string (PVK mode).
 
-        Silabo always has k=consonant (or NUL_KO), v=vowel (or NUL_VO).
+        Silabo always has k=consonant (or NUL_KO*), v=vowel (or NUL_VO*).
         Rules:
-        - NUL_KO (x) and NUL_VO (y) remain lowercase
+        - Special markers (NUL_KO, NUL_KO_KOM, NUL_KO_FIN, NUL_VO, NUL_VO_KOM, NUL_VO_FIN) remain as-is
         - All other consonants and vowels are uppercase
 
         Example: Silabo(k='l', v='a') → 'AL' (VC order)
         """
-        k_str = silabo.k if silabo.k in (NUL_KO, NUL_VO) else silabo.k.upper()
-        v_str = silabo.v if silabo.v in (NUL_KO, NUL_VO) else silabo.v.upper()
+        special_markers = {
+            NUL_KO,
+            NUL_KO_KOM,
+            NUL_KO_FIN,
+            NUL_VO,
+            NUL_VO_KOM,
+            NUL_VO_FIN,
+        }
+        k_str = silabo.k if silabo.k in special_markers else silabo.k.upper()
+        v_str = silabo.v if silabo.v in special_markers else silabo.v.upper()
         return v_str + k_str  # VC order for PVK
 
     def skribu_avk(self, vorto: Vorto) -> str:
