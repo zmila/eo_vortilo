@@ -1,5 +1,6 @@
 # Statistikoj pri la Esperanto-vortaro
 
+
 ## Ĝenerala resumo
 
 - **Totala nombro de vortoj:** 6_050_218
@@ -13,6 +14,7 @@
 - **Meza vortolongo (en silaboj):** 2.072
 - **Meza vortolongo (en literoj):** 4.768
 - **Meza silablongo (en literoj):** 2.301
+
 
 ## Distribuo de vortoj laŭ longo (en literoj)
 
@@ -36,6 +38,7 @@
 | 17              |       365 |   0.006% |
 | 18              |       103 |   0.002% |
 | 19              |        27 |   0.000% |
+
 
 ## Distribuo de literoj
 
@@ -70,6 +73,7 @@
 | ĵ      |    28,903 |   0.100% |
 | ĥ      |     4,006 |   0.014% |
 
+
 ## Distribuo de vortoj laŭ nombro de silaboj
 
 | Nombro de silaboj | Frekvenco | Procento |
@@ -82,6 +86,102 @@
 | 6                 |    19,845 |   0.328% |
 | 7                 |     2,095 |   0.035% |
 | 8                 |       101 |   0.002% |
+
+
+
+## Komencoj de unusilaboj vortoj
+
+∅ estas marko de silabo komencanta per vokalo.
+
+Distinktaj komencoj: 26
+
+Komenco       Frekvenco          %
+----------------------------------
+  l              689392    28.784%
+  d              362803    15.148%
+  ∅              318570    13.301%
+  k              308538    12.882%
+  n              127481     5.323%
+  s               94093     3.929%
+  p               92498     3.862%
+  m               73893     3.085%
+  pr              60223     2.515%
+  ĉ               58011     2.422%
+  ĝ               41142     1.718%
+  pl              41077     1.715%
+  v               37036     1.546%
+  j               31676     1.323%
+  ŝ               20698     0.864%
+  tr              20635     0.862%
+  kv               4287     0.179%
+  t                3754     0.157%
+  h                3380     0.141%
+  kr               2043     0.085%
+  ĵ                1324     0.055%
+  f                1274     0.053%
+  c                1151     0.048%
+  brn                18     0.001%
+  r                  16     0.001%
+  st                 11     0.000%
+
+
+## Komencoj de unuaj silaboj (ĉiuj vortoj)
+
+∅ estas marko de silabo komencanta per vokalo.
+
+Distinktaj komencoj: 86
+
+Komenco       Frekvenco          %
+----------------------------------
+  ∅             1233596    20.389%
+  l              836101    13.819%
+  k              672849    11.121%
+  d              527081     8.712%
+  m              307255     5.078%
+  s              301125     4.977%
+  p              268231     4.433%
+  n              227924     3.767%
+  t              212004     3.504%
+  v              172611     2.853%
+  r              159480     2.636%
+  pr             159405     2.635%
+  f              130961     2.165%
+  ĉ              125478     2.074%
+  j               78732     1.301%
+  h               71543     1.182%
+  pl              67166     1.110%
+  ĝ               62275     1.029%
+  tr              59701     0.987%
+  b               57688     0.953%
+  ŝ               43209     0.714%
+  gr              28274     0.467%
+  c               27320     0.452%
+  kr              27053     0.447%
+  g               24271     0.401%
+  fr              20779     0.343%
+  kv              17902     0.296%
+  st              16480     0.272%
+  sc              12779     0.211%
+  br              12090     0.200%
+  kl              12021     0.199%
+  sp              11407     0.189%
+  ŝt               8213     0.136%
+  fl               7361     0.122%
+  str              7074     0.117%
+  ĵ                5727     0.095%
+  z                5708     0.094%
+  gv               4122     0.068%
+  bl               3645     0.060%
+  skr              3643     0.060%
+  sk               3108     0.051%
+  gl               2911     0.048%
+  kn               2322     0.038%
+  sv               2150     0.036%
+  dr               1643     0.027%
+  sl               1572     0.026%
+  skl              1413     0.023%
+  ĥ                 831     0.014%
+  [la ceteraj sube estas pli maloftaj ol 'ĥ']
 
 
 ## Lastaj finajoj de multsilabaj vortoj
@@ -130,22 +230,26 @@ Distinktaj lastaj finajoj (el vortoj kun 2+ silaboj): 36
 
 
 
+
 ## 5-literaj silaboj
 
-Silaboj kun 'k' kaj 'f' partoj de 2 literoj (ĉiu: 30 kun finaĵoj je -ajn, -ojn)
+Silaboj el 5 literoj (se kalkuli ĉiujn, kun finaĵoj je -ajn, -ojn, estos 30)
 
-Silabo                Frekvenco          %
-------------------------------------------
-  (tr|a|ns)                4427    54.252%
-  (gr|a|nd)                 525     6.434%
-  (fr|a|nc)                 203     2.488%
-  (kr|i|st)                 143     1.752%
-  (fr|e|md)                  92     1.127%
-  (tr|e|jn)                  34     0.417%
-  (fr|o|nt)                  29     0.355%
-  (bl|a|nk)                  15     0.184%
-  (tr|i|nk)                   8     0.098%
-  (gr|u|nd)                   7     0.086%
-  (st|u|rm)                   6     0.074%
-  (pr|i|nc)                   6     0.074%
-  (tr|a|nĉ)                   6     0.074%
+Silabo     Frekvenco          %
+-------------------------------
+  trans     4427    54.252%
+  grand      525     6.434%
+  franc      203     2.488%
+  krist      143     1.752%
+  fremd       92     1.127%
+  trejn       34     0.417%
+  front       29     0.355%
+  blank       15     0.184%
+  trink        8     0.098%
+  grund        7     0.086%
+  sturm        6     0.074%
+  princ        6     0.074%
+  tranĉ        6     0.074%
+
+Nur silaboj aperintaj en Tekstaro en tia pozicio.
+Ekzemple vorto `frukto` taŭgas por tiu listo, sed ne aperis uzo de `fruktĝardeno`, ĉiuj aperoj estas kun vokalo post la radiko: `fruktodona`, `fruktoĝardeno`, `senfrukta`, do en statistiko estas nur silabo `fruk`.
