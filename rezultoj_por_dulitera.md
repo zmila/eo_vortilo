@@ -4,21 +4,21 @@
 
 > "Tengvaro, la alfabeto el «La mastro de l' ringoj» ... elekton inter la skoloj: ĉu, laŭ la aperta-silaba skemo, oni vokalizu la antaŭvokalan konsonanton; aŭ laŭ la skemo malaperta-silaba, la postvokalan. La fonetika sistemo de Esperanto sugestas la unuan; la morfologio (precipe la sufiksoj kaj la finaĵoj: aĵ, at, em, ig, as, an …) pli bone funkcias kun la dua (aldonu al tio la fleksian ŝanĝon de aperteco ĉe esti—estas, homo—homon ktp)."
 
-## 1. Difino de la du reĝimoj
+## Difino de la du reĝimoj
 
 *La klasifiko priskribita* (vokaligi la antaŭvokalan konsonanton – KV, aŭ la postvokalan – VK) estas en la angla scienco konata kiel *ómatehtar*‑modoj aŭ *vowel‑tehta*. La esprimo *tehta* estas la vorto por la diakritaj signoj, kiuj reprezentas la vokalojn. Oni skribas signon por konsonanto kaj metas super ĝi la diakritan signon de vokalo.
 
 Por precize nomi la du specifajn variantojn, la angla lingvo uzas la jenajn nociojn:
 
-- **La skemo KV (**angle: *Quenya‑style*).  
+- **La skemo KV** (angle: *Quenya‑style*).  
 La vokala signo, aŭ *tehta*, estas metata ĉe la **antaŭa **konsonanto. Do super konsonanto oni skribas la **sekvantan** vokalan signon. LA, DO‑MO, LA‑BO‑RO
 
-- **La skemo VK (angle: ***Sindarin‑style*).  
+- **La skemo VK** (angle: *Sindarin‑style*).  
 La vokala signo estas metata ĉe la **posta** konsonanto. Do super konsonanto oni skribas la vokalan signon de vokalo, kiu estas **antaŭ** la konsonanto.  EL, AP‑UD, AM‑IK‑OJ
 
 Mi intencas analizi la du variantojn kaj kompari ilin.
 
-## 2. Metodologio: duliteraj silaboj kaj helpaj literoj
+## Metodologio: duliteraj silaboj kaj helpaj literoj
 
 Ne ĉiam eblas glate dividi vorton je puraj KV aŭ VK silaboj. Foje en vortoj aperas du sinsekvaj vokaloj aŭ konsonantoj, kaj fine aŭ komence de vorto povas esti vokalo, kiam dezirindas konsonanto, kaj male. En tiaj kazoj ni enmetu helpajn literojn: konsonanton **x** aŭ vokalon **y**.
 
@@ -33,21 +33,17 @@ Teorie:
 Do la demando estas: kiu el la variantoj KV aŭ VK estas pli bona por Esperanto?  
 
 
-## 3. Reguloj por helpaj literoj kaj markado de vortlimoj
+## Reguloj por helpaj literoj kaj markado de vortlimoj
 
 Por fari la necesajn kalkulojn, ni fiksu regulojn por la helpaj literoj kaj specialajn markojn por komencaj kaj finaj kazoj:
 
 - se mankas vokalo por formi silabon, ni aldonu neprononceblan vokalon `y`
-
-  - se tio estas komence de vorto, oni marku tion `\<y`
-
-  - se fine de vorto: `y\>`
+  - se tio estas komence de vorto, oni marku tion `<y`
+  - se fine de vorto: `y>`
 
 - se mankas konsonanto por formi silabon, ni aldonu neprononceblan konsonanton `x`
-
-  - se tio estas komence de vorto: `\<x`
-
-  - se fine de vorto: `x\>`
+  - se tio estas komence de vorto: `<x`
+  - se fine de vorto: `x>`
 
 Ekzemploj:
 
@@ -64,7 +60,7 @@ Ekzemploj:
 | babiletemulegoj | BA BI LE TE MU LE GO Jy\> | \<yB AB IL ET EM UL EG OJ |
 
 
-## 4. Teoria nombro de eblaj duliteraj kombinaĵoj
+## Teoria nombro de eblaj duliteraj kombinaĵoj kaj realaj oftecoj
 
 Esperanto havas
 
@@ -82,29 +78,26 @@ Do en ambaŭ variantoj povas esti teorie:
 
 Sume **143** = 23×5 + 5 + 23 = 24×6 − 1 (minus la neebla kombino `xy`).
 
-## 5. Realaj silaboj kaj oftecoj
+Kiam mi dividis la tekston je silaboj per ambaŭ variantoj kaj komparis, kiom da diversaj duliteraj silaboj reale aperas en Esperantaj tekstoj, mi trovis ke ĉiuj 143 teoriaj kombinaĵoj efektive aperas en tekstoj, kvankam kun diversaj frekvencoj.
 
-***Se oni dividas **la tekston je silaboj per ambaŭ variantoj kaj komparas, kiom da diversaj duliteraj silaboj reale aperas en Esperantaj tekstoj, oni trovas ke ĉiuj 143 teoriaj kombinaĵoj efektive aperas en tekstoj, kvankam kun diversaj frekvencoj.
 
-## 6. Superfluaj markoj: kiu reĝimo estas pli mallonga?
+## Superfluaj markoj: kiu reĝimo estas pli mallonga?
 
 Poste mi kalkulis nur la silabojn kiuj entenas `x` aŭ `y` – la *neplenajn* silabojn.
 
 En dulitera silabara skribsistemo, kiam ni skribas ekzemple `BU`, ni devas marki ambaŭ elementojn B kaj U (ĉu per apartaj supersignoj, ĉu per apartaj simboloj), same kiom en la alfabeta skribo. Sed kiam ni skribas silabon kun mankanta konsonanto (`xE` aŭ `Ex`) aŭ mankanta vokalo (`yI` aŭ `Iy`), ni faras unu plian markon kompare kun alfabeta skribo. Tial la nombro de tiaj neplenaj silaboj mezuras la *superfluaĵojn* de la sistemo.
 
-| Kaŭzo | KV | VK |
-| :-: | :-: | :-: |
-| Sinsekvaj vokaloj interne de vorto | 818 872 | 818 872 |
-| Vokalo ĉe vortolimo | `\<x`: 1 233 596 | `x\>`: 3 306 868 |
-| Sinsekvaj konsonantoj interne de vorto | 3 078 008 | 3 078 008 |
-| Konsonanto ĉe vortolimo | `y\>`: 2 743 350 | `\<y`: 4 816 622 |
-| **Sume** | **7 873 826** | **12 020 370** |
+| Kaŭzo |        KV        | VK |
+| :-: |:----------------:| :-: |
+| Sinsekvaj vokaloj interne de vorto |     818 872      | 818 872 |
+| Vokalo ĉe vortolimo | `<x`: 1 233 596  | `x>`: 3 306 868 |
+| Sinsekvaj konsonantoj interne de vorto |    3 078 008     | 3 078 008 |
+| Konsonanto ĉe vortolimo | `y>`: 2 743 350 | `<y`: 4 816 622 |
+| **Sume** |  **7 873 826**   | **12 020 370** |
 
 
 La internaj kazoj ne favoras nek KV nek VK:
-
 - sinsekvaj vokaloj donas la saman kvanton en ambaŭ sistemoj; 
-
 - sinsekvaj konsonantoj ankaŭ donas la saman kvanton en ambaŭ sistemoj. 
 
 La ĉefa diferenco venas de **vortokomencoj** kaj **vortofinoj**.
@@ -113,8 +106,8 @@ La ĉefa diferenco venas de **vortokomencoj** kaj **vortofinoj**.
 
 | Tipo | Malsamaj vortformoj | Procento de vortformoj | Aperoj en la korpuso | Procento de aperoj |
 | :-: | :-: | :-: | :-: | :-: |
-| Komenciĝas per vokalo | 10 110 | 20.44% | 1 233 596 | 20.39% |
-| Komenciĝas per konsonanto | 39 353 | 79.56% | 4 816 622 | 79.61% |
+| Komenciĝas per vokalo | 10 110 | 20.44% | 1 233 596 | 20.39% |
+| Komenciĝas per konsonanto | 39 353 | 79.56% | 4 816 622 | 79.61% |
 
 Ĉar preskaŭ kvar kvinonoj de la vortoj komenciĝas per konsonanto, **KV** havas grandan avantaĝon ĉe vortokomenco. En KV komenca konsonanto estas natura komenco de paro; en VK ĝi bezonas helpan `y`.
 
@@ -122,25 +115,25 @@ La ĉefa diferenco venas de **vortokomencoj** kaj **vortofinoj**.
 
 | Tipo | Malsamaj vortformoj | Procento de vortformoj | Aperoj en la korpuso | Procento de aperoj |
 | :-: | :-: | :-: | :-: | :-: |
-| Finiĝas per vokalo | 23 317 | 47.14% | 3 306 868 | 54.66% |
-| Finiĝas per konsonanto | 26 146 | 52.86% | 2 743 350 | 45.34% |
+| Finiĝas per vokalo | 23 317 | 47.14% | 3 306 868 | 54.66% |
+| Finiĝas per konsonanto | 26 146 | 52.86% | 2 743 350 | 45.34% |
 
 La kvanto de malsamaj konsonant-finaj vortformoj estas iom pli granda, sed vokal-finaj vortoj estas pli oftaj en reala teksto.
 
 Ankaŭ ĉe vortofino **KV** ricevas avantaĝon, kvankam malpli grandan ol ĉe vortokomenco: en KV problemon kaŭzas finaj konsonantoj, dum en VK problemon kaŭzas finaj vokaloj. En la korpuso finaj vokaloj estas pli oftaj ol finaj konsonantoj.
 
 La diferenco inter la du variantoj laŭ neplenaj signoj estas:  
- `(4 816 622 - 1 233 596) + (3 306 868 – 2 743 350) = 4 146 544`
+ `(4 816 622 - 1 233 596) + (3 306 868 – 2 743 350) = 4 146 544`
 
 Tamen ne ĉiam KV estas pli mallonga ol VK. El inter 24 161 diversaj vortoj, ĉe kiuj la KV‑silabigo diferencas de la VK‑silabigo, estas 5 477 okazoj, kiam VK estas malpli longa (ekz. AL kontraŭ xA-Ly).
 
 
-## 7. Unua konkludo: KV estas pli mallonga
+## Unua konkludo: KV estas pli mallonga
 
 Ene de vorto la sinsekvaj konsonantoj kaj vokaloj ne influas, ĉu KV aŭ VK estas pli mallonga. Decidas la kvanto de konsonantoj kaj vokaloj ĉe la vortokomenco kaj vortofino. Ĉar Esperantaj vortoj pli ofte komenciĝas per konsonanto kaj pli ofte finiĝas per vokalo, la varianto **KV estas pli mallonga** ol VK – *proksimume 10 % malpli da silaboj.  
 
 
-## 8. Efikeco de la silabaro: kiom da diversaj signoj necesas?
+## Efikeco de la silabaro: kiom da diversaj signoj necesas?
 
 Kio do pri la aserto, ke „la varianto VK estas pli oportuna por skribi sufiksojn kaj finaĵojn“? Ni rigardu la statistikon de la plej oftaj silaboj.
 
@@ -162,25 +155,21 @@ Do la varianto **VK estas pli efika** rilate al la nombro de diversaj silaboj ne
 
 Ekzemplo:
 
-| ~~***Alfabeto** | ~~***gemaljuneguletoj babiletemulegoj**  | ~~***Kvanto da literoj: 31,   
-diversaj literoj: 12,   
-percento: 38.71%** |
-| - | - | - |
-| ~~***Varianto KV** | ~~***GE MA Ly JU NE GU LE TO Jy** ~~***BA BI LE TE MU LE GO Jy**  | ~~***Kvanto da paroj: 17,   
-diversaj paroj: 14,   
-percento: 82.35%** |
-| ~~***Varianto VK** | ~~***yG EM AL yJ UN EG UL ET OJ** ~~***yB AB IL ET EM UL EG OJ**  | ~~***Kvanto da paroj: 17,   
-diversaj paroj: 12,   
-percento: 70.59%** |
+.  | **Alfabeto** | **Varianto KV**            | **Varianto VK** |
+----|---|----------------------------|---|
+teksto: | gemaljuneguletoj  | GE MA Ly JU NE GU LE TO Jy | yG EM AL yJ UN EG UL ET OJ |
+-  | babiletemulegoj | Jy BA BI LE TE MU LE GO Jy |  yB AB IL ET EM UL EG OJ |
+Kvanto da literoj/paroj: | 31 | 17                         | 17 |
+diversaj literoj/paroj: | 12 | 14                         | 12 |
+percento:  | 38.71% | 82.35%                     | 70.59% |
 
 *12 en VK kontraŭ 14 en KV.  
 VK gajnas, pro ripeto de la samaj sufiksoj kaj finaĵo: ET, EG, UL, OJ.  
 KV bonŝancis, ke en tiu ĉi ekzemplo hazarde tri foje ripetiĝis LE.*
 
+**La alfabeto de Esperanto** havas 28 literojn (kvin vokaloj, 23 konsonantoj). La silabaroj postulas 143 teoriajn kombinaĵojn. Tio signifas, ke lernanto devas memori kvinoble pli da signoj ol en la kutima ortografio. Tial ekzistas klasika interŝanĝo: **pli mallonga skribo kontraŭ multe pli granda signaro**.
 
-*La alfabeto de Esperanto havas 28 literojn (kvin vokaloj, 23 konsonantoj). La silabaroj postulas 143 teoriajn kombinaĵojn. Tio signifas, ke lernanto devas memori kvinoble pli da signoj ol en la kutima ortografio. Tial ekzistas klasika interŝanĝo: **pli mallonga skribo kontraŭ multe pli granda signaro**.
-
-## 9. Resumo
+## Resumo
 
 - *Ambaŭ Tengvar‑modoj (KV kaj VK) estis analizitaj per dulitera silabado kun helpaj literoj `x` kaj `y`.*
 
@@ -194,7 +183,7 @@ KV bonŝancis, ke en tiu ĉi ekzemplo hazarde tri foje ripetiĝis LE.*
 
 - *Plia esploro povus konsideri la faktan skriban rapidecon, la kompleksecon de la unuopaj signoj (ekz. ĉu pli oftaj signoj estas pli simplaj) kaj la influon de la lern‑facileco.*
 
-## 10. Vidu ankaŭ
+## Vidu ankaŭ
 
 - *La originala artikolo de Sergio Pokrovskij pri la ŝava alfabeto, kun la mencio pri la du Tengvar‑reĝimoj:*  
 [https://kovro.heliohost.org/eo/tools/Sxava/sxava.html](https://kovro.heliohost.org/eo/tools/Sxava/sxava.html)
