@@ -1,3 +1,4 @@
 /.ipynb_checkpoints
 /.venv
 /eo_vortilo.code-workspace
+__pycache__/
