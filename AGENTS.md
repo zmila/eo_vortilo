@@ -24,11 +24,10 @@ python3 main.py                         # CLI entrypoint (hardcoded paths — ma
 
 - **Esperanto naming** throughout: variables, functions, comments, commit messages
 - **Formatter**: `ruff` (VSCode: `charliermarsh.ruff`)
-- No `pyproject.toml` / `requirements.txt` — dependencies are stdlib + pytest
+- Only dependency outside stdlib is `pytest` (listed in `requirements-dev.txt`)
 
 ## Gotchas
 
 - `main.py` has developer-hardcoded paths (`~/prg/java/PseudoTextGenerator/...`); the `Command` enum + `current_task` tuple are set manually to pick a pipeline stage
 - Tests use `sys.path.insert(0, ...)` instead of an installed package — always run from repo root
-- `.venv/` exists locally but is gitignored; you may need `python3 -m venv .venv` + `pip install pytest`
-- The only known test dependency beyond stdlib is `pytest`
+

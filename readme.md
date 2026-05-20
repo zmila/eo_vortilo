@@ -1,28 +1,49 @@
-# Creating a Desktop App Using QT6
+# eo_vortilo — Esperanto Writing Analysis Tools
 
-The tutorial:
-    https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/
+A collection of utilities for analyzing the written form of the Esperanto language.
 
-## Installation:
+## Parts
 
-install PyQt6 using:
-> ```bash
-> $ python3 -m pip install PyQt6
-> ```
-download: 8mb, 74mb
+### 1. CLI application (`main.py`)
 
+A Python CLI that reads a command from the config at the top of `main.py` and executes it. The available commands are defined in the `Command` enum in `main.py`. They cover:
 
-## run the app:
-> ```bash
-> $ python3 app.py
-> ```
+- reading and preparing source XML files (`prepar_ilo`)
+- filtering, classifying, and converting word lists (`filtr_ilo`)
+- frequency counting, statistics, and analysis (`analiz_ilo`)
 
-## run tests:
+> **Note:** `data_folder` and `current_task` at the top of `main.py` are hardcoded for the developer's local setup and must be adjusted before running.
 
+### 2. Interactive Jupyter notebooks
+
+- `dulitera_silabaro.ipynb` — syllable splitting using the **two-letter (AVK/PVK)** approach
+- `literumado_laŭ_kevako.ipynb` — syllable splitting using the **kevako** method
+
+Each notebook demonstrates a different algorithm for dividing Esperanto words into syllables.
+
+## Setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+```
+
+## Run tests
+
+```bash
 pytest tests/
-# or
+# or a single file:
 pytest tests/test_du_litera_silab_ilo.py -v
+```
 
+## Run the CLI
+
+```bash
+python3 main.py
+```
+
+*(Edit `data_folder` and `current_task` in `main.py` first.)*
 
 # todo
 
